@@ -38,3 +38,13 @@ mag_picks = mne.pick_types(raw.info, meg='mag', eog=True, exclude=raw.info['bads
 grad_picks = mne.pick_types(raw.info, meg='grad', eog=True, exclude=raw.info['bads'])
 
 baseline = (None, 0)  # means from the first instant to t = 0
+reject = dict(grad=4000e-13, mag=4e-12, eog=150e-6)
+
+epochs = mne.Epochs(raw, events, event_id, tmin, tmax, proj=True, picks=picks, baseline=baseline, preload=False, reject=reject, verbose='WARNING')
+print(epochs)
+
+epochs_data = epochs['aud_l'].get_data()
+print(epochs_data.shape)
+
+from scipy import io
+io.savemat('epochs_data.mat', dict(epochs_data=epochs_data), oned_as='row')
