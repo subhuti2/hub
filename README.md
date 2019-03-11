@@ -1,3 +1,8 @@
+
+From 2019-03-11
+1) python learning in general, starting with pytest1.py
+2) my learning of MNE was included too, starting with mnw.py
+
 <<<<<<< HEAD
 <<<<<<< HEAD
 # hub
