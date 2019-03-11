@@ -1,3 +1,7 @@
+# # # # # # # # # # # # # # # # # # 
+# # # Access raw data¶
+# # # # # # # # # # # # # # # # # # 
+
 #prepare the environment
 import mne
 mne.set_log_level('WARNING')
@@ -22,6 +26,10 @@ pl.ylabel('MEG data (T)')
 #save data
 picks = mne.pick_types(raw.info, meg=True, eeg=False, stim=True, exclude=[])
 raw.save('sample_audvis_meg_raw.fif', tmin=0, tmax=150, picks=picks)
+
+# # # # # # # # # # # # # # # # # # 
+# # # Define and read epochs¶
+# # # # # # # # # # # # # # # # # # 
 
 # check data with certain events
 events = mne.find_events(raw, stim_channel='STI 014')
@@ -48,3 +56,36 @@ print(epochs_data.shape)
 
 from scipy import io
 io.savemat('epochs_data.mat', dict(epochs_data=epochs_data), oned_as='row')
+
+epochs.save('sample-epo.fif')
+
+evoked = epochs['aud_l'].average()
+print(evoked)
+
+max_in_each_epoch = [e.max() for e in epochs['aud_l']]
+print(max_in_each_epoch[:4])
+
+c_path = '/Users/wang/mne/tmp_data/'
+evoked_fname = data_path + 'sample_audvis-ave.fif'
+# evoked1 = mne.fiff.Evoked(evoked_fname, setno=1, baseline=(None, 0), proj=True)
+evoked1 = mne.Evoked(evoked_fname, condition=0, proj=True)  #baseline=(None, 0) was not applicable
+evoked2 = mne.Evoked(evoked_fname, condition=1, proj=True)  
+evoked3 = mne.Evoked(evoked_fname, condition='Left visual', proj=True)  
+
+# contrast = evoked1 - evoked2    #unsupported operand type(s) for -: 'Evoked' and 'Evoked'
+
+# # # # # # # # # # # # # # # # # # 
+# # # Time-Frequency: Induced power and phase-locking values¶
+# # # # # # # # # # # # # # # # # # 
+
+import numpy as np
+n_cycles = 2  # number of cycles in Morlet wavelet
+frequencies = np.arange(7, 30, 3)  # frequencies of interest
+Fs = raw.info['sfreq']  # sampling in Hz
+times = epochs.times
+
+from mne.time_frequency import EpochsTFR
+power, phase_lock = EpochsTFR(epochs_data, Fs=Fs, frequencies=frequencies, n_cycles=2, n_jobs=1)
+
+# baseline corrections with ratio
+power /= np.mean(power[:, :, times < 0], axis=2)[:, :, None]
