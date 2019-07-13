@@ -1,0 +1,70 @@
+#define PIXEL_SHADER
+#define MAP_SIZE_X 5632.000
+#define MAP_SIZE_Y 2048.000
+#define GRADIENT_BORDERS
+#define MAP_POW2_X 1.000
+#define MAP_POW2_Y 1.000
+#define FOW_POW2_X 1.000
+#define FOW_POW2_Y 1.000
+#define DOUBLE_BLEND
+#define PDX_DIRECTX_9
+
+#define mod( X, Y ) ( X % Y )
+
+float fmod_loop( float x, float y )
+{
+  return x - y * floor( x / y );
+}
+
+#define GetMatrixData( Matrix, row, col ) ( Matrix [ row ] [ col ] )
+#define FIX_FLIPPED_UV( X ) ( X )
+
+#define sampler2DShadow sampler2D
+
+float3x3 CastTo3x3( in float4x4 M )
+{
+	return (float3x3)M;
+}
+#define Create3x3 float3x3
+
+float2 vec2(float vValue) { return float2(vValue, vValue); }
+float3 vec3(float vValue) { return float3(vValue, vValue, vValue); }
+float4 vec4(float vValue) { return float4(vValue, vValue, vValue, vValue); }
+
+#define tex2Dlod0(samp,uv) tex2Dlod(samp, float4((uv), 0.0, 0.0))
+
+#define PDX_POSITION POSITION
+
+#define PDX_COLOR COLOR
+sampler BaseLUT1 : register(s0);
+sampler BaseLUT2 : register(s1);
+sampler BlendLUT1 : register(s2);
+sampler BlendLUT2 : register(s3);
+float4 BATCHED_VARIABLES_1 : register(c0);
+#define InvWindowSize BATCHED_VARIABLES_1.xy
+#define vBlendFactor1 BATCHED_VARIABLES_1.z
+#define vBlendFactor2 BATCHED_VARIABLES_1.w
+
+struct VS_INPUT
+{
+	int2 position : POSITION;
+};
+struct VS_OUTPUT
+{
+	float4 position : PDX_POSITION;
+	float2 uv : TEXCOORD0;
+};
+		float4 main( VS_OUTPUT Input ) : PDX_COLOR
+		{
+			float3 base = tex2Dlod0( BaseLUT1, Input.uv ).rgb;
+			float3 blend = tex2Dlod0( BlendLUT1, Input.uv ).rgb;
+			
+		#ifdef DOUBLE_BLEND
+			base = lerp(base, tex2Dlod0( BaseLUT2, Input.uv ).rgb, vBlendFactor1);
+			blend = lerp(blend, tex2Dlod0( BlendLUT2, Input.uv ).rgb, vBlendFactor1);
+		#endif
+			
+			//return float4( 1, 0, 0, 1 );
+			return float4( lerp(base, blend, vBlendFactor2), 1 );
+		}
+	

@@ -1,0 +1,16 @@
+[gameapplication.cpp:1943]: Resetting game
+[gameapplication.cpp:1975]: Resetting gamestate. Total time: 0.633178
+[gameapplication.cpp:1985]: Destroying HistoryDatabase. Time: 0.00245787
+[gameapplication.cpp:1995]: Reseting IDs. Time: 0.000298331
+[gameapplication.cpp:2002]: Init countries. Time: 0.000298331
+[gameapplication.cpp:2047]: Refreshing knowledge. Time: 0.00376167
+[gameapplication.cpp:2062]: CGraphicalMap ResetGame. Time: 3.84944e-07
+[gameapplication.cpp:1943]: Resetting game
+[gameapplication.cpp:1975]: Resetting gamestate. Total time: 0.616606
+[gameapplication.cpp:1985]: Destroying HistoryDatabase. Time: 7.69887e-07
+[gameapplication.cpp:1995]: Reseting IDs. Time: 0.000312959
+[gameapplication.cpp:2002]: Init countries. Time: 0.000312959
+[gameapplication.cpp:2015]: Loading HistoryDatabase. Time: 0.313642
+[gameapplication.cpp:2031]: Executing HistoryEntries. Time: 10.608
+[gameapplication.cpp:2047]: Refreshing knowledge. Time: 0.0312509
+[gameapplication.cpp:2062]: CGraphicalMap ResetGame. Time: 1.53977e-06
