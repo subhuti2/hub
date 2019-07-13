@@ -227,3 +227,4 @@ DriverVersion.LowPart:	856112
 [16:53:55][graphicssettings.cpp:715]: Usable res: 1152 864 75
 [16:53:55][graphics.cpp:934]: Done creating device.
 [16:54:31][gameapplication.cpp:998]: Version: Cornflakes v1.5.4 (96b0) build time: Jun 26 2018 15:30:55
+[16:57:25][graphicssettings.cpp:746]: Using multisampling: 4

@@ -456,3 +456,4 @@
 [16:54:19][onaction.cpp:397]: 01_tfv_on_actions.txt: ActionList #35 tag = on_subject_annexed random events = 0 events = 0
 [16:54:19][onaction.cpp:397]: 01_tfv_on_actions.txt: ActionList #36 tag = on_release_as_free random events = 0 events = 0
 [16:54:19][onaction.cpp:397]: 03_wtt_on_actions.txt: ActionList #37 tag = on_peaceconference_ended random events = 0 events = 0
+[16:57:18][frontendinterfacehandler.cpp:261]: Session change
