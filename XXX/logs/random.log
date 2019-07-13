@@ -1,16 +1,16 @@
-[gameapplication.cpp:1943]: Resetting game
-[gameapplication.cpp:1975]: Resetting gamestate. Total time: 0.633178
-[gameapplication.cpp:1985]: Destroying HistoryDatabase. Time: 0.00245787
-[gameapplication.cpp:1995]: Reseting IDs. Time: 0.000298331
-[gameapplication.cpp:2002]: Init countries. Time: 0.000298331
-[gameapplication.cpp:2047]: Refreshing knowledge. Time: 0.00376167
-[gameapplication.cpp:2062]: CGraphicalMap ResetGame. Time: 3.84944e-07
-[gameapplication.cpp:1943]: Resetting game
-[gameapplication.cpp:1975]: Resetting gamestate. Total time: 0.616606
-[gameapplication.cpp:1985]: Destroying HistoryDatabase. Time: 7.69887e-07
-[gameapplication.cpp:1995]: Reseting IDs. Time: 0.000312959
-[gameapplication.cpp:2002]: Init countries. Time: 0.000312959
-[gameapplication.cpp:2015]: Loading HistoryDatabase. Time: 0.313642
-[gameapplication.cpp:2031]: Executing HistoryEntries. Time: 10.608
-[gameapplication.cpp:2047]: Refreshing knowledge. Time: 0.0312509
-[gameapplication.cpp:2062]: CGraphicalMap ResetGame. Time: 1.53977e-06
+[gameapplication.cpp:1912]: Resetting game
+[gameapplication.cpp:1944]: Resetting gamestate. Total time: 0.611088
+[gameapplication.cpp:1954]: Destroying HistoryDatabase. Time: 0.00730245
+[gameapplication.cpp:1964]: Reseting IDs. Time: 0.00028676
+[gameapplication.cpp:1971]: Init countries. Time: 0.00028676
+[gameapplication.cpp:2016]: Refreshing knowledge. Time: 0.00318955
+[gameapplication.cpp:2031]: CGraphicalMap ResetGame. Time: 9.71e-07
+[gameapplication.cpp:1912]: Resetting game
+[gameapplication.cpp:1944]: Resetting gamestate. Total time: 0.623121
+[gameapplication.cpp:1954]: Destroying HistoryDatabase. Time: 1.625e-06
+[gameapplication.cpp:1964]: Reseting IDs. Time: 0.000876813
+[gameapplication.cpp:1971]: Init countries. Time: 0.000876813
+[gameapplication.cpp:1984]: Loading HistoryDatabase. Time: 0.0646497
+[gameapplication.cpp:2000]: Executing HistoryEntries. Time: 10.7444
+[gameapplication.cpp:2016]: Refreshing knowledge. Time: 0.0233229
+[gameapplication.cpp:2031]: CGraphicalMap ResetGame. Time: 6.07e-07

@@ -1,1 +1,4 @@
 ﻿launcher_sound=yes
+third_party_warn={
+	"dlc/dlc013_sabaton/dlc013.dlc"
+}

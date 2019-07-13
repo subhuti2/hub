@@ -2,8 +2,8 @@ force_pow2_textures=no
 language="l_english"
 graphics={
 	size={
-		x=1920
-		y=1080
+		x=1280
+		y=1024
 	}
 
 	min_gui={
@@ -15,9 +15,8 @@ graphics={
 	refreshRate=60
 	max_refresh_rate=75
 	fullScreen=no
-	borderless=yes
+	borderless=no
 	shadows=no
-	disable_3d_model_viewer=no
 	shadowSize=2048
 	multi_sampling=4
 	maxanisotropy=4
@@ -34,7 +33,7 @@ master_volume=100.000000
 ambient_volume=50.000000
 voice_volume=100.000000
 dev_master_volume=50.000000
-last_game_version="1.5.4"
+last_game_version="1.5.0"
 minimap_visible=no
 graceful_exit=no
 combat_sound_random=6
@@ -72,7 +71,7 @@ outliner_open=yes
 windowmovetime=0.200000
 hints=yes
 last_mods={
-	"mod/humble.mod"
+	"mod/humble2.mod"
 }
 counter_color_mode=1
 template_counter=0
@@ -82,6 +81,3 @@ default_offline_wiki=no
 pause_on_popups=no
 popup_news=yes
 popup_events=yes
-shown_legal_documents={
-	"privacy-policy-2018-11-02"
-}
