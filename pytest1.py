@@ -23,8 +23,8 @@ print(r'''hello,\n
 world''')
 
 print('''line1
-line2
-line3''')
+...line2
+...line3''')
 
 a = 'ABC'
 b = a
@@ -107,6 +107,20 @@ if birth < 2000:
 else:
     print('00后')
 
+H = input('Height: ')
+W = input('Weight')
+bmi = float(W) / (float(W)**2)
+if bmi < 18.5:
+    print('过轻')
+elif bmi < 25:
+    print('正常')
+elif bmi < 28:
+    print('过重')
+elif bmi < 32:
+    print('肥胖')
+else
+    print('严重肥胖')
+
 names = ['Michael', 'Bob', 'Tracy']
 for name in names:
     print(name)    
@@ -152,3 +166,24 @@ s1 | s2
 a = ['c', 'b', 'a']
 a.sort()
 a
+
+f = open('/Users/wang/git/hub/hub/X1.txt', 'r')
+f.read()
+f.close()
+
+f = open('/Users/wang/git/hub/hub/X1.txt', 'r')
+f.read()
+f.close()
+
+with open('/Users/wang/git/hub/hub/X1.txt', 'r') as f:
+    print(f.readline())
+
+with open('/Users/wang/git/hub/hub/X1.txt', 'r') as f:
+    y = f.read()
+
+f = open('/Users/wang/git/hub/hub/X1.txt', 'r')
+k = 0
+for line in f.readlines():
+    y[k] = line
+    k = k + 1
+f.close()
