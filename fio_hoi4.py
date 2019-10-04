@@ -48,7 +48,7 @@ with open('/Users/wang/git/hub/hub/X2.txt', 'r') as infile:
             else:
                 print('#%d:%d ID %s & %s does not match!' %(pError, pData, tmp[0], log[pError][1]))
                 break
-            line = " ".join(tmp)
+            line = ";".join(tmp)
             if pError < L - 1:
                 pError = pError + 1
         outfile.write(line)
