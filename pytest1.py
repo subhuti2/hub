@@ -52,7 +52,7 @@ chr(66)
 '中文'.encode('ascii')
 b'ABC'.decode('ascii')
 len('ABC')
- len('中文'.encode('utf-8'))
+len('中文'.encode('utf-8'))
 'Hi, %s, you have $%d.' % ('Michael', 1000000)
 
 print('%2d-%02d' % (3, 1))
@@ -107,9 +107,9 @@ if birth < 2000:
 else:
     print('00后')
 
-H = input('Height: ')
-W = input('Weight')
-bmi = float(W) / (float(W)**2)
+H = input('Height (m): ')
+W = input('Weight (kg):')
+bmi = float(W) / (float(H)**2)
 if bmi < 18.5:
     print('过轻')
 elif bmi < 25:
@@ -118,7 +118,7 @@ elif bmi < 28:
     print('过重')
 elif bmi < 32:
     print('肥胖')
-else
+else:
     print('严重肥胖')
 
 names = ['Michael', 'Bob', 'Tracy']
