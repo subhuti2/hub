@@ -98,8 +98,8 @@ elif age >= 6:
     print('teenager')
 else:
     print('your age is', age)
-    print('teenager')    
-    
+    print('teenager')
+
 birth = input('birth: ')
 birth = int(birth)
 if birth < 2000:
@@ -123,8 +123,8 @@ else:
 
 names = ['Michael', 'Bob', 'Tracy']
 for name in names:
-    print(name)    
-    
+    print(name)
+
 list(range(5))
 
 
@@ -187,3 +187,15 @@ for line in f.readlines():
     y[k] = line
     k = k + 1
 f.close()
+
+
+for i in range(0, 100, 10):
+   print(i)
+
+   a = ','
+#   a.join('haha', 'check', 'f')
+   print(a.join('haha'))
+
+
+
+
