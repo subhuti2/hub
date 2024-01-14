@@ -1,0 +1,42 @@
+
+state={
+	id=907
+	name="STATE_907"
+	manpower = 21000000
+	
+	state_category = megalopolis
+	
+	buildings_max_level_factor=200.00
+
+	history={
+		owner = CHI
+		add_core_of = CHI
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 5
+			air_base = 10
+			anti_air_building = 5
+			industrial_complex = 1
+			arms_factory = 1
+			radar_station = 6
+		}
+
+		victory_points = {
+			1134 5
+		}
+		victory_points = {
+			9843 50
+		}
+		victory_points = {
+			12026 5
+		}
+
+		1938.10.25 = {
+			controller = JAP
+		}
+	}
+
+	provinces={
+		1134 4140 6828 9843 11761 12026 
+	}
+}

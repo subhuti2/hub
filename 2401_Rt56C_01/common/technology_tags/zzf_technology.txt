@@ -1,0 +1,8 @@
+technology_folders = {
+	
+	zz_integrated_folder = {
+		ledger = army
+	}
+}
+
+#####-----------------------------------------------------------> End

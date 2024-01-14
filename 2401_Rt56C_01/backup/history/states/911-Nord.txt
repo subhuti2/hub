@@ -1,0 +1,21 @@
+
+state={
+	id=911
+	name="STATE_911" # Sikkim
+	manpower = 5000000
+	
+	state_category = city
+
+	history={
+		owner = RAJ
+		add_core_of = CHI
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 3
+		}
+	}
+
+	provinces={
+		1129 1898 2076 3989 7106  #from 439-Delhi
+	}
+}

@@ -1,0 +1,13 @@
+﻿units = {
+
+	##### ROCN #####
+	fleet = {
+		name = "Di 1 Jiandui"
+		naval_base = 7014 #Shanghai
+		task_force = {
+			name = "Di 1 Jiandui"
+			location = 7014 #Shanghai
+			ship = { name = "Ninghai" definition = light_cruiser equipment = { ship_hull_cruiser_1 = {amount = 1 owner = CHI version_name = "Ninghai Class" } } }
+		}
+	}
+}

@@ -1,0 +1,15 @@
+NDefines.NNavy.ADMIRAL_TASKFORCE_CAP = 90									-- admirals will start getting penalties after this amount of taskforces -- was 10
+NDefines.NBuildings.AIRBASE_CAPACITY_MULT = 500		-- Each level of airbase building multiplied by this, gives capacity (max operational value). Value is int. 1 for each airplane.
+NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 120									
+NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 20									
+NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 6000									
+NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 6000									
+NDefines.NMilitary.MAX_AIR_EXPERIENCE = 6000									
+NDefines.NProduction.MAX_CIV_FACTORIES_PER_LINE = 100	-- Max number of factories that can be assigned a single production line.
+NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 150
+NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 150
+NDefines.NCountry.BASE_MAX_COMMAND_POWER = 500.0					-- base value for maximum command power
+-- NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 0.03 					-- Base year ahead penalty
+-- NDefines.NCountry.EQUIPMENT_UPGRADE_CHUNK_MAX_SIZE = 20
+-- NDefines.NBuildings.MAX_SHARED_SLOTS = 50
+-- NDefines.NProduction.MAX_MIL_FACTORIES_PER_LINE = 150
