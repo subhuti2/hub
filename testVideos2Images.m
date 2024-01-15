@@ -6,7 +6,7 @@ inputPath = 'D:\Downloads\t2\t2v\';
 outputPath = 'D:\Downloads\t2\t2v2i\';
 
 % % % The tags to read in
-theTag = '[DLPanda.com][aiartbeauty]';
+theTag = '[DLPanda.com][kkishappyyy]';
 n1 = numel(theTag);
 
 % % % The current file ID

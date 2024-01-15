@@ -1,0 +1,41 @@
+state={
+	id=608
+	name="STATE_608"
+	resources={
+		oil=10
+	}
+	manpower = 16000000
+	
+	state_category = metropolis
+	
+	buildings_max_level_factor=200.00
+
+	history={
+		owner = CHI
+		add_core_of = CHI
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 5
+			air_base = 10
+			anti_air_building = 5
+			dockyard = 5
+			industrial_complex = 1
+			arms_factory = 1
+			radar_station = 6
+			10068 = {
+				naval_base = 10
+			}
+		}
+		victory_points = {
+			10068 30 
+		}
+
+		1938.10.25 = {
+			controller = JAP
+		}
+	}
+
+	provinces={
+		4137 9969 10068 
+	}
+}

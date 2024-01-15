@@ -1,0 +1,103 @@
+	
+	LvBu = { 
+		type = land
+
+		allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+
+		modifier = {
+			wounded_chance_factor = -0.95
+			sickness_chance = -0.95
+         offence = 0.5
+			defence = 0.5
+         special_forces_cap = 5
+         special_forces_min = 500
+
+			supply_consumption_factor = -0.5
+         out_of_supply_factor = 0.5
+			no_supply_grace = 240
+			winter_attrition_factor = -0.5
+			terrain_penalty_reduction = 0.50
+			acclimatization_hot_climate_gain_factor = 0.5
+			acclimatization_cold_climate_gain_factor = 0.5
+			org_loss_when_moving = -0.50
+			max_dig_in = 5
+			max_dig_in_factor = 0.5
+			dig_in_speed_factor = 0.5
+         experience_loss_factor = -0.5
+
+         army_attack_speed_factor = 0.1
+         army_attack_factor = 0.1
+			army_core_attack_factor = 0.1
+			army_defence_factor = 0.1
+			army_core_defence_factor = 0.1
+         army_speed_factor = 0.1
+         army_strength_factor = 0.1
+         army_morale_factor = 0.1
+         army_org_factor = 0.1
+         army_org_regain = 0.1
+			breakthrough_factor = 0.1
+			land_reinforce_rate = 0.1
+			recon_factor = 0.1
+
+			planning_speed = 1
+			max_planning = 0.3
+			amphibious_invasion = 0.25 # 30% faster invasions
+			invasion_preparation = -0.25
+			equipment_capture = 0.25
+         fortification_collateral_chance = 0.5
+         fortification_damage = 0.5
+	   }
+
+      field_marshal_modifier = {
+         max_army_group_size = 2
+      }
+
+      corps_commander_modifier = {
+         max_commander_army_size = 20
+      }
+
+      attack_skill_factor = 2
+      defense_skill_factor = 2
+      planning_skill_factor = 2
+      logistics_skill_factor = 2
+   }
+
+   ZhouYu = {
+		type = navy
+
+		allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+
+		modifier = {
+			positioning = 0.5
+			spotting_chance = 0.5
+
+			naval_retreat_chance = 0.5
+			naval_retreat_speed = 0.5
+			sortie_efficiency = 0.5
+			shore_bombardment_bonus = 0.5 
+			critical_receive_chance = -0.5
+			naval_critical_effect_factor = -0.5
+			naval_critical_score_chance_factor = 0.5
+			naval_damage_factor = 0.5
+			naval_defense_factor = 0.5
+			naval_speed_factor = 0.5
+			ships_at_battle_start = 0.5
+         	navy_visibility = -0.5
+			screening_efficiency = 0.5
+			convoy_retreat_speed = 0.95
+      }
+   }   

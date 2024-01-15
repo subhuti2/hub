@@ -1,0 +1,158 @@
+﻿capital = 613 # Nanjing
+
+oob = "CHI_1936"
+set_stability = 0.5
+
+set_global_flag = KMT_mod_enabled
+
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 20 producer = GER }
+add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 500 producer = GER }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 35 producer = GER }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 50 producer = GER }
+
+set_war_support = 0.45
+
+# Starting tech
+set_technology = {
+
+	# Extended Technologies
+	camo = 1
+	r56_militia_tech = 1
+	
+	infantry_weapons = 1
+	early_fighter = 1
+	early_bomber = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_mountaineers = 1
+	support_weapons = 1
+	motorised_infantry = 1
+	basic_train = 1
+
+	gw_artillery = 1
+	interwar_artillery = 1
+	interwar_antiair = 1
+	interwar_antitank = 1
+	advanced_infantry_weapons3 = 1
+	
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_battery = 1
+		basic_secondary_battery = 1
+		basic_torpedo = 1
+		coastal_defense_ships = 1
+	}
+}
+
+
+set_party_name = { ideology = fascism long_name = KMT_blueshirt name = KMT_blueshirt }
+
+set_country_flag = KMT_central_government_flag
+save_global_event_target_as = KMT_central_gov_tag
+capital_scope = {
+	set_state_flag = KMT_central_gov_capital
+}
+set_party_name = { ideology = communism long_name = KMT_CPWDP_long name = KMT_CPWDP }
+
+recruit_character = CHI_chiang_kai_shek
+recruit_character = CHI_he_yingqin
+recruit_character = CHI_kung_hsiang_si
+recruit_character = CHI_soong_mei_ling
+recruit_character = CHI_dai_li
+recruit_character = CHI_tu_yu_ming
+recruit_character = CHI_zhou_zhirou
+recruit_character = CHI_xiao_jinguang
+recruit_character = CHI_chen_shaokuan
+recruit_character = CHI_alexander_von_falkenhausen
+recruit_character = CHI_sun_lijen
+recruit_character = CHI_chen_cheng
+recruit_character = CHI_yu_hanmou
+
+recruit_character = CHI_mao_bangchu
+
+add_ideas = {
+	german_advisors
+	CHI_communist_uprisings
+	KMT_warlord_cliques_pre_war
+	public_iliteracy
+	KMT_weak_army
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	KMT_corrupted_government
+	CHI_alexander_von_falkenhausen
+}
+save_global_event_target_as = WTT_current_china_leader
+
+set_convoys = 40
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 1
+	fascism = 2
+	communism = 1
+	neutrality = 96
+}
+
+add_opinion_modifier = { target = PRC modifier = hostile_status }
+add_opinion_modifier = { target = GER modifier = sino_german_cooperation }
+GER = {
+	add_opinion_modifier = { target = CHI modifier = sino_german_cooperation }
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "郑苹如"
+		GFX = GFX_portrait_asia_generic_operative_f_1
+		traits = { operative_commando operative_seducer operative_infiltrator operative_master_interrogator operative_tough operative_safe_cracker operative_escape_artist operative_demolition_expert }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = yes
+		nationalities = { CHI }
+	}
+	create_operative_leader = {
+		name = "潘汉年"
+		portrait_path = znew/genric_spy_15.dds 
+		traits = { operative_commando operative_seducer operative_infiltrator operative_master_interrogator operative_tough operative_safe_cracker operative_escape_artist operative_demolition_expert }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { CHI }
+	}	
+	create_operative_leader = {
+		name = "顾顺章"
+		portrait_path = znew/genric_spy_19.dds 
+		traits = { operative_commando operative_seducer operative_infiltrator operative_master_interrogator operative_tough operative_safe_cracker operative_escape_artist operative_demolition_expert }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { CHI }
+	}	
+	create_operative_leader = {
+		name = "袁殊"
+		portrait_path = znew/genric_spy_22.dds 
+		traits = { operative_commando operative_seducer operative_infiltrator operative_master_interrogator operative_tough operative_safe_cracker operative_escape_artist operative_demolition_expert }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { CHI }
+	}	
+}
