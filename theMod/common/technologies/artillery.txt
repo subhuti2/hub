@@ -24,7 +24,7 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = chinese_light_weapon0
+			leads_to_tech = chinese_weapon_0
 			research_cost_coeff = 1
 		}
 
@@ -2602,7 +2602,7 @@ technologies = {
 
 ###------> X <><> <><> <><> <><> <><>
 
-	chinese_light_weapon0 = {
+	chinese_weapon_0 = {
 
 		enable_equipments = {
 			infantry_equipment_x_1
@@ -2614,7 +2614,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = chinese_light_weapon1
+			leads_to_tech = chinese_weapon_1
 			research_cost_coeff = 1
 		}
 
@@ -2635,28 +2635,14 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon1 = {
+	chinese_weapon_1 = {
 		
-		category_all_infantry = {
-			soft_attack = 0.3
-			hard_attack = 0.2
-			ap_attack = 0.5
-			breakthrough = 0.1
-			default_morale = 0.05
+		enable_equipments = {
+			support_equipment_x_1
 		}
-
-		category_support_battalions = {
-			soft_attack = 0.3
-			hard_attack = 0.2
-			ap_attack = 0.5
-			breakthrough = 0.1
-			default_morale = 0.05
-		}
-
-		cas_damage_reduction = 0.1
-
+		
 		path = {
-			leads_to_tech = chinese_light_weapon2
+			leads_to_tech = chinese_weapon_2
 			research_cost_coeff = 1
 		}
 
@@ -2677,7 +2663,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon2 = {
+	chinese_weapon_2 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2698,12 +2684,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon3
+			leads_to_tech = chinese_weapon_3
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1939
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -2719,7 +2705,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon3 = {
+	chinese_weapon_3 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2740,12 +2726,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon4
+			leads_to_tech = chinese_weapon_4
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1940
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -2761,7 +2747,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon4 = {
+	chinese_weapon_4 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2782,12 +2768,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon5
+			leads_to_tech = chinese_weapon_5
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1941
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -2803,7 +2789,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon5 = {
+	chinese_weapon_5 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2824,12 +2810,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon6
+			leads_to_tech = chinese_weapon_6
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1942
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -2845,7 +2831,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon6 = {
+	chinese_weapon_6 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2866,12 +2852,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon7
+			leads_to_tech = chinese_weapon_7
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1943
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -2887,7 +2873,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon7 = {
+	chinese_weapon_7 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2908,12 +2894,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon8
+			leads_to_tech = chinese_weapon_8
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1944
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -2929,7 +2915,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon8 = {
+	chinese_weapon_8 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2950,12 +2936,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon9
+			leads_to_tech = chinese_weapon_9
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1945
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -2971,7 +2957,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon9 = {
+	chinese_weapon_9 = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -2992,12 +2978,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon10
+			leads_to_tech = chinese_weapon_a
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1948
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -3013,7 +2999,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon10 = {
+	chinese_weapon_a = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -3034,12 +3020,12 @@ technologies = {
 		cas_damage_reduction = 0.1
 
 		path = {
-			leads_to_tech = chinese_light_weapon11
+			leads_to_tech = chinese_weapon_b
 			research_cost_coeff = 1
 		}
 
-		start_year = 1936
-		research_cost = 1
+		start_year = 1951
+		research_cost = 2
 
 		folder = {
 			name = artillery_folder
@@ -3055,7 +3041,7 @@ technologies = {
 		}
 	}
 
-	chinese_light_weapon11 = {
+	chinese_weapon_b = {
 		
 		category_all_infantry = {
 			soft_attack = 0.3
@@ -3075,12 +3061,41 @@ technologies = {
 
 		cas_damage_reduction = 0.1
 
+		start_year = 1954
+		research_cost = 2
+
+		folder = {
+			name = artillery_folder
+			position = { x = -7 y = 22 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+	chinese_weapon_10 = {
+		
+		enable_equipments = {
+			motorized_equipment_x_1
+		}
+		
+		path = {
+			leads_to_tech = chinese_weapon_11
+			research_cost_coeff = 1
+		}
+
 		start_year = 1936
 		research_cost = 1
 
 		folder = {
 			name = artillery_folder
-			position = { x = -7 y = 22 }
+			position = { x = -10 y = 2 }
 		}
 
 		categories = {
