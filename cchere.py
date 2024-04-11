@@ -19,7 +19,7 @@ soup = BeautifulSoup(response.content, 'html.parser')
 # To get the value from the <input> element:
 input_tag = soup.find('input', {'name': 'p', 'type': 'text'})
 if input_tag:
-    number_pages = input_tag.get('value')
+    number_pages = int(input_tag.get('value'))  # Convert to integer
     print("Number of pages:", number_pages)
 else:
     print("Number of pages information not found.")
