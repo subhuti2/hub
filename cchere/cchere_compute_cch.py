@@ -14,7 +14,7 @@ def load_timestamps(filename):
     Returns:
     - numpy array of timestamps converted to decimal hours.
     """
-    with open(filename, 'r') as file:
+    with open(f'T_{filename}.txt', 'r') as file:
         timestamps = []
         for line in file:
             time_str = line.strip()
