@@ -21,7 +21,7 @@ def convert_to_decimal_hours(time_str):
     decimal_hours = time_obj.hour + time_obj.minute / 60 + time_obj.second / 3600
     return decimal_hours
 
-def read_time_stamps(user_name):
+def plot_data_dist(user_name):
     file_name = f'T_{user_name}.txt'
     
     # Check if the file exists
@@ -36,8 +36,18 @@ def read_time_stamps(user_name):
             decimal_hours = convert_to_decimal_hours(line)
             time_stamps.append(decimal_hours)
 
-    return time_stamps
+    num_bins = 24
+    bins = [i for i in range(num_bins + 1)]
 
+    plt.hist(time_stamps, bins=bins, edgecolor='black')
+    plt.xlabel('Hours (est.)')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Time Data')
+    plt.xticks([0, 6, 12, 18, 24])
+    plt.grid(True)
+
+    plt.savefig(f'Dist_{user_name}.png')
+    plt.close()
 
 usernames = read_from_files('user_out0.txt')
 
