@@ -49,7 +49,7 @@ def plot_data_dist(user_name):
     plt.savefig(f'Dist_{user_name}.png')
     plt.close()
 
-usernames = read_from_files('user_out0.txt')
+usernames = read_from_files('user_out.txt')
 
 if usernames is not None:
     for user_name in usernames:
