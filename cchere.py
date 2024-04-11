@@ -1,6 +1,12 @@
 import requests
+import re
+import datetime
 from bs4 import BeautifulSoup
 from urllib.parse import quote
+
+# Record the start time
+start_time = datetime.datetime.now()
+print(f"Program started at: {start_time}")
 
 # Ask the user for the username
 raw_username = input("Please enter the username: ")
@@ -51,6 +57,22 @@ for i in range(1, number_pages + 1):
         x_times.append(time_part)
 
 
-if x_dates and x_times:
-    print("First date:", x_dates[0])
-    print("First time:", x_times[0])
+# Sanitize raw_username for use in filenames
+safe_username = re.sub('[^a-zA-Z0-9\n\.]', '_', raw_username)
+
+# Write dates and times to files (assuming x_dates and x_times are populated)
+with open(f'{safe_username}_date.txt', 'w', encoding='ascii') as date_file, \
+     open(f'{safe_username}_time.txt', 'w', encoding='ascii') as time_file:
+    for date in x_dates:
+        date_file.write(date + '\n')
+    for time in x_times:
+        time_file.write(time + '\n')
+
+
+# Record the end time
+end_time = datetime.datetime.now()
+print(f"Program ended at: {end_time}")
+
+# Calculate and print the time cost
+time_cost = end_time - start_time
+print(f"Total time cost to run the program: {time_cost}")
