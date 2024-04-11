@@ -28,7 +28,7 @@ def read_from_files(file_in, file_out):
     
     return usernames, output_tags
 
-def process_post_time (raw_username, output_tag)
+def process_post_time(raw_username, output_tag)
 
     # Record the start time
     start_time = datetime.datetime.now()
