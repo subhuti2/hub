@@ -27,12 +27,6 @@ qiaoshang
 qianwangjing
 jiariguike
 fanghenshao
-tangjiashan
-tieshou
-qiaoshang
-qianwangjing
-jiariguike
-fanghenshao
 chenwangfenqi
 jiyihanxing
 fangping
@@ -64,3 +58,4 @@ yumicai
 huangkaiailiying
 shanIDzouren
 riyueshuanghua
+maqianzu
