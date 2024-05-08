@@ -84,6 +84,22 @@
 % 	cchere_plot_cch(dd2, ID, id1, id2);
 % end
 
+%%. 4 compare two IDs
+id1 = 13; id2 = 18; id3 = 19;
+ct = 0;
+for iy = 2007 : 2024
+	for im = 1 : 12
+		ct = ct + 1;
+		x1 = iy *10000 + (im - 1) * 100;
+		x2 = iy *10000 + im * 100;
+		x0(4, ct) = x2 / 100;
+		x0(1, ct) = sum(d{id1} <= x2 & d{id1} > x1);
+		x0(2, ct) = sum(d{id2} <= x2 & d{id2} > x1);
+		x0(3, ct) = sum(d{id3} <= x2 & d{id3} > x1);
+	end
+end
+x1 = x0(1, 109:end);
+x2 = sum(x0(2:3, 109:end));
 
 
 function cchere_plot_cch(dd, ID, id1, id2)
