@@ -4,7 +4,7 @@
 r'''
 learning.py
 
-A Python 3 tutorial from https://www.liaoxuefeng.com
+iA Python 3 tutorial from https://www.liaoxuefeng.com
 
 Usage:
 
