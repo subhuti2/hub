@@ -1,201 +1,98 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun 18 21:05:43 2018
 
-@author: pwang
-"""
-# 2018-06-18
+import requests
+import zipfile
+import io
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
 
-print('hello, world')
+# URL of the online zip file
+url = 'https://fiscaldata.treasury.gov/static-data/downloads/zip/c90212ec30bcf5e9fd2d2dff262ea56fa65aa7f5dbe8067ee7894d75ba591099/HstDebt_17900101_20230930.zip'
 
-print('The quick brown fox', 'jumps over', 'the lazy dog')
+# Download the zip file
+response = requests.get(url)
+zip_content = zipfile.ZipFile(io.BytesIO(response.content))
 
-print(300)
+# Extract the zip file in the current directory
+zip_content.extractall()
 
-print(100 + 300 + 500)
+# Assuming there is a CSV file in the zip, load it
+df = pd.read_csv('HstDebt_17900101_20230930.csv')
+print(df.head())
 
-print('please input your name:\n')
-name = input()
-print('hello,', name)
+debt_hist = df.iloc[:, 1]  # ':' means all rows, '0' is the first column index
+year_id = df.iloc[:, 3]  # ':' means all rows, '0' is the first column index
 
-print(r'''hello,\n
-world''')
+# Calculate differences divided by the next element for all but the last element
+debt_add_per_year = (debt_hist - debt_hist.shift(-1)) / debt_hist.shift(-1) * 100  # Convert to percentage
+# Set the last element to 0 because there's no next element to compare with
+debt_add_per_year.iloc[-1] = 0
 
-print('''line1
-...line2
-...line3''')
+# # # # Prepare data for line segments
+# # # points = np.array([year_id, debt_add_per_year]).T.reshape(-1, 1, 2)
+# # # segments = np.concatenate([points[:-1], points[1:]], axis=1)
 
-a = 'ABC'
-b = a
-a = 'XYZ'
-print(b)
+# # # # Create a LineCollection
+# # # lc = LineCollection(segments, cmap='coolwarm', norm=plt.Normalize(0, 100))
+# # # lc.set_array(debt_add_per_year[:-1])  # Color mapping based on debt increase rate
+# # # lc.set_linewidth(2)
 
-12 % 4
-n = 123
-f = 456.789
-s1 = 'Hello, world'
-s2 = 'Hello, \'Adam\''
-s3 = r'Hello, "Bart"'
-s4 = r'''Hello,
-Lisa!'''
+# # # fig, ax = plt.subplots()
+# # # ax.add_collection(lc)
+# # # ax.autoscale()
+# # # ax.margins(0.1)
 
-print(s1, s2, n, f, s3, s4)
+# # # ax.set_xlabel('Year')
+# # # ax.set_ylabel('Debt Increase Rate (%)')
+# # # ax.set_title("Yearly Debt Increase Rate")
+# # # ax.legend([lc], ['Debt Increase Rate'], loc='upper left')
 
-print('包含中文的str')
-ord('A')
-ord('中')
-chr(66)
-'\u4e2d\u6587'
-'ABC'.encode('ascii')
-'中文'.encode('utf-8')
-'中文'.encode('ascii')
-b'ABC'.decode('ascii')
-len('ABC')
-len('中文'.encode('utf-8'))
-'Hi, %s, you have $%d.' % ('Michael', 1000000)
+# # # # Set the x-axis limits to focus on 1930 to 2000
+# # # ax.set_xlim(1780, 2030)
 
-print('%2d-%02d' % (3, 1))
-print('%.2f' % 3.1415926)
+# # # plt.show()
 
 
-classmates = ['Michael', 'Bob', 'Tracy']
-classmates.append('Adam')
-classmates.insert(1, 'Jack')
-classmates.pop()
-classmates.pop(2)
+# Plotting
+fig, ax = plt.subplots()  # Create a figure and an axes.
+ax.plot(year_id, debt_add_per_year, linewidth=1, label='Debt Increase')  # Plot some data on the axes.
+#ax.set_xlabel('Year', fontsize=12)  # Add an x-label to the axes.
+#ax.set_ylabel('Debt Increase Rate(%)', fontsize=12)  # Add a y-label to the axes.
+ax.set_title("Yearly Debt Increase Rate (%)", fontsize=12)  # Add a title to the axes.
 
-L = ['Apple', 123, True]
-s = ['python', 'java', ['asp', 'php'], 'scheme']
-len(s)
-p = ['asp', 'php']
-s = ['python', 'java', p, 'scheme']
-s[2][1][1]
-classmates = ('Michael', 'Bob', 'Tracy')
+# Limit the range of the x-axis
+#ax.set_xlim(1930, 2000)
 
-t = (1, 2)
-t = (1)
-tt = (1,)
+# Add a horizontal line at y=0 in black
+ax.axhline(y=0, color='black', linewidth=1)
 
+# # Add vertical lines in red
+# ax.axvline(x=1917, color='red', linewidth=1, label='WW I')
+# ax.axvline(x=1941, color='green', linewidth=1, label='WW II')
 
+# # Add text description near the vertical line
+# ax.text(1917, ax.get_ylim()[1] * 0.95, 'First World War', horizontalalignment='right', color='red')
 
-L = [
-    ['Apple', 'Google', 'Microsoft'],
-    ['Java', 'Python', 'Ruby', 'PHP'],
-    ['Adam', 'Bart', 'Lisa']
-]
-print(L[0][0])
-print(L[1][1])
-print(L[2][2])
+# Add vertical lines in color for events
+ax.axvline(x=1812, color='#FF0077', linewidth=0.5, label='Britain 1812')
+ax.axvline(x=1837, color='#00FFFF', linewidth=0.5, label='Jackson')
+ax.axvline(x=1861, color='#FF00FF', linewidth=0.5, label='Civil war')
+#ax.axvline(x=1865, color='#FF00FF', linewidth=0.5, label='Civil war')
+#ax.axvline(x=1898, color='#00FFFF', linewidth=0.5, label='Spanish war')
+ax.axvline(x=1917, color='#FF0000', linewidth=0.5, label='WW I')
+#ax.axvline(x=1918, color='#FF0000', linewidth=0.5, label='WW I')
+ax.axvline(x=1941, color='#00FF00', linewidth=0.5, label='WW II')
+#ax.axvline(x=1945, color='#00FF00', linewidth=0.5, label='WW II')
+#ax.axvline(x=1981, color='#FF0077', linewidth=0.5, label='Reagan in')
+#ax.axvline(x=2001, color='#FF3333', linewidth=0.5, label='Bush2 in')
 
+ax.legend(fontsize=6)  # Add a legend.
 
-age = 1
-if age >= 18:
-    print('your age is', age)
-    print('adult')
-elif age >= 6:
-    print('your age is', age)
-    print('teenager')
-else:
-    print('your age is', age)
-    print('teenager')
+# Export the figure to a PNG file
+plt.savefig('US_Debt_Increase_Rate.png', dpi=300)  # Save the figure to a file named 'plot.png' with 300 DPI
 
-birth = input('birth: ')
-birth = int(birth)
-if birth < 2000:
-    print('00前')
-else:
-    print('00后')
-
-H = input('Height (m): ')
-W = input('Weight (kg):')
-bmi = float(W) / (float(H)**2)
-if bmi < 18.5:
-    print('过轻')
-elif bmi < 25:
-    print('正常')
-elif bmi < 28:
-    print('过重')
-elif bmi < 32:
-    print('肥胖')
-else:
-    print('严重肥胖')
-
-names = ['Michael', 'Bob', 'Tracy']
-for name in names:
-    print(name)
-
-list(range(5))
-
-
-sum = 0
-n = 99
-while n > 0:
-    sum = sum + n
-    n = n - 2
-print(sum)
-
-n = 1
-while n <= 100:
-    n = n + 1
-    if n % 2 : # 如果n是偶数，执行continue语句
-        continue # continue语句会直接继续下一轮循环，后续的print()语句不会执行
-    print(n)
-print('END')
-
-
-d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
-d['Adam'] = 67
-
-'Thomas' in d
-
-d.pop('Bob')
-
-d.pop()
-
-s = set([1, 1, 2, 2, 3, 3])
-print(s)
-s.add(4)
-s.remove(4)
-
-
-s1 = set([1, 2, 3])
-s2 = set([2, 3, 4])
-s1 & s2
-s1 | s2
-a = ['c', 'b', 'a']
-a.sort()
-a
-
-f = open('/Users/wang/git/hub/hub/X1.txt', 'r')
-f.read()
-f.close()
-
-f = open('/Users/wang/git/hub/hub/X1.txt', 'r')
-f.read()
-f.close()
-
-with open('/Users/wang/git/hub/hub/X1.txt', 'r') as f:
-    print(f.readline())
-
-with open('/Users/wang/git/hub/hub/X1.txt', 'r') as f:
-    y = f.read()
-
-f = open('/Users/wang/git/hub/hub/X1.txt', 'r')
-k = 0
-for line in f.readlines():
-    y[k] = line
-    k = k + 1
-f.close()
-
-
-for i in range(0, 100, 10):
-   print(i)
-
-   a = ','
-#   a.join('haha', 'check', 'f')
-   print(a.join('haha'))
-
-
+plt.show()  # Show the plot
 
 
